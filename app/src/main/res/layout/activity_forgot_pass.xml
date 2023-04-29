@@ -7,4 +7,26 @@
         android:layout_height="match_parent"
         tools:context=".ForgotPassActivity">
 
+    <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu nombre de usuario"
+            android:minHeight="48dp"
+            android:layout_marginTop="59dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/buttonRestablecerContraseña"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+            android:id="@+id/buttonRestablecerContraseña"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/enviar_contraseña" android:layout_alignParentTop="true"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+            android:layout_marginBottom="576dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

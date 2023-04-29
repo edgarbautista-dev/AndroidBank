@@ -27,7 +27,7 @@ public class NewUserActivity extends AppCompatActivity {
         btnRegistrar=(Button) findViewById(R.id.buttonRegister);
         ErrorMsg=(TextView) findViewById(R.id.error_messages);
 
-        final String[] tiposUsuario = new String[]{"-", "Administrador", "Usuario"};
+        final String[] tiposUsuario = new String[]{"-", "Profesor", "Alumno"};
         TipoUsuario=(Spinner) findViewById(R.id.tipoUsuario);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tiposUsuario);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

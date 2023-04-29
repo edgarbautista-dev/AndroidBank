@@ -12,7 +12,7 @@ import android.os.Bundle;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView LblMensaje;
-    private EditText editTextEmail;
+    private EditText editTextUsername;
     private EditText editTextPassword;
     private TextView OlvidoContrasena;
     private TextView Registrarse;
@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         LblMensaje=(TextView) findViewById(R.id.mensajeBienvenida);
-        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         OlvidoContrasena = findViewById(R.id.mensajeOlvidoContrasena);
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí puedes agregar la lógica de autenticación
-                String email = editTextEmail.getText().toString();
+                String email = editTextUsername.getText().toString();
                 String password = editTextPassword.getText().toString();
                 if (isValidEmail(email) && isValidPassword(password)) {
                     // Autenticación exitosa
