@@ -26,6 +26,8 @@ public interface DocumentDAO {
     void updateDocuments(Document... documents);
 
     @Insert
+    long insertDocument(Document document);
+    @Insert
     void insertAll(Document... documents);
 
     @Delete

@@ -25,11 +25,11 @@ public class Document {
         this.name = name;
     }
 
-    public Blob getFile() {
+    public byte[] getFile() {
         return file;
     }
 
-    public void setFile(Blob file) {
+    public void setFile(byte[] file) {
         this.file = file;
     }
 
@@ -41,5 +41,5 @@ public class Document {
     private int name;
 
     @ColumnInfo(name = "file")
-    private Blob file;
+    private byte[] file;
 }
