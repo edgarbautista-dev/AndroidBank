@@ -1,4 +1,4 @@
-package com.example.miauniverse;
+package com.example.siuag;
 
 import android.content.Intent;
 import android.text.TextUtils;
