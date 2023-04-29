@@ -16,9 +16,6 @@ public interface DocumentDAO {
     @Query("SELECT * FROM document")
     List<Document> getAll();
 
-    @Query("SELECT * FROM document WHERE name LIKE :name")
-    Document findByName(String name);
-
     @Query("SELECT * FROM document WHERE id LIKE :id")
     Document findById(String id);
 

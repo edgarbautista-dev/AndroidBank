@@ -6,6 +6,9 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.siuag.entity.User;
+import com.example.siuag.service.RegistrationService;
+
 public class NewUserActivity extends AppCompatActivity {
     private EditText Usuario;
     private EditText Password;
@@ -64,13 +67,21 @@ public class NewUserActivity extends AppCompatActivity {
             }else if ( tipoUsuario.isEmpty() || tipoUsuario.equals("") || tipoUsuario.equals("-")) {
                 ErrorMsg.setText("Selecciona un tipo de usuario");
             } else {
-                Intent intent = new Intent(NewUserActivity.this, LoginActivity.class);
-                intent.putExtra("usuario", usuario);
-                intent.putExtra("password", password);
-                intent.putExtra("nombre", nombre);
-                intent.putExtra("apellido", apellido);
-                intent.putExtra("tipoUsuario", tipoUsuario);
-                startActivity(intent);
+                User user = new User();
+                user.setUsername(usuario);
+                user.setPassword(password);
+                user.setName(nombre);
+                user.setLastname(apellido);
+                user.setRole(tipoUsuario);
+
+                long userID = RegistrationService.createUser(user, null, this);
+                if(userID > 0){
+                    Toast.makeText(NewUserActivity.this, "Usuario agregado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(NewUserActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(NewUserActivity.this, "Error al crear el usuario, intenta mas tarde", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

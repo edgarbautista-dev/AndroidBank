@@ -31,6 +31,8 @@ public interface UserDAO {
     void updateUsers(User... users);
 
     @Insert
+    long insertUser(User user);
+    @Insert
     void insertAll(User... users);
 
     @Delete

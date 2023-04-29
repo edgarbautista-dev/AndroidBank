@@ -10,9 +10,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.siuag.service.AuthenticationService;
+
 public class LoginActivity extends AppCompatActivity {
     private TextView LblMensaje;
-    private EditText editTextEmail;
+    private EditText username;
     private EditText editTextPassword;
     private TextView OlvidoContrasena;
     private TextView Registrarse;
@@ -24,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         LblMensaje=(TextView) findViewById(R.id.mensajeBienvenida);
-        editTextEmail = findViewById(R.id.editTextEmail);
+        username = findViewById(R.id.username);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         OlvidoContrasena = findViewById(R.id.mensajeOlvidoContrasena);
@@ -34,9 +36,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí puedes agregar la lógica de autenticación
-                String email = editTextEmail.getText().toString();
+                String user = username.getText().toString();
                 String password = editTextPassword.getText().toString();
-                if (isValidEmail(email) && isValidPassword(password)) {
+                if (AuthenticationService.isValidUser(LoginActivity.this, user, password)) {
                     // Autenticación exitosa
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);

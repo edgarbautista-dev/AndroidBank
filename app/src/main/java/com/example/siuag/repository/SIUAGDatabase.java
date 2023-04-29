@@ -9,6 +9,8 @@ import androidx.room.RoomDatabase;
 import com.example.siuag.dao.DocumentDAO;
 import com.example.siuag.dao.ProjectDAO;
 import com.example.siuag.dao.UserDAO;
+import com.example.siuag.entity.Document;
+import com.example.siuag.entity.Project;
 import com.example.siuag.entity.User;
 
 /*
@@ -18,10 +20,10 @@ import com.example.siuag.entity.User;
 
             userDAO.insertAll(userDAO);
 * */
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, Project.class, Document.class}, version = 2, exportSchema = false)
 public abstract class SIUAGDatabase extends RoomDatabase {
 
-    private static final String DB_NAME = "siuag_db";
+    private static final String DB_NAME = "demo_db";
     private static final String DB_URL = "database/siuag_db.db";
     private static SIUAGDatabase instance;
 
@@ -29,7 +31,7 @@ public abstract class SIUAGDatabase extends RoomDatabase {
         if(instance == null){
             instance = Room.databaseBuilder(context.getApplicationContext(),
                             SIUAGDatabase.class, DB_NAME).createFromAsset(DB_URL)
-                    .fallbackToDestructiveMigration().allowMainThreadQueries().build();
+                    .allowMainThreadQueries().build();
         }
 
         return instance;

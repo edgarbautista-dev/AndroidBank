@@ -1,5 +1,6 @@
 package com.example.siuag.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -55,23 +56,14 @@ public class User {
         this.role = role;
     }
 
-    public int getProfileImage() {
-        return profileImage;
-    }
-
-    public void setProfileImage(int profileImage) {
-        this.profileImage = profileImage;
-    }
-
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
     private int id;
-
-    @ColumnInfo(name = "username")
-    private String username;
 
     @ColumnInfo(name = "password")
     private String password;
+
+    @ColumnInfo(name = "username")
+    private String username;
 
     @ColumnInfo(name = "name")
     private String name;
@@ -81,7 +73,4 @@ public class User {
 
     @ColumnInfo(name = "role")
     private String role;
-
-    @ColumnInfo(name = "profile_image")
-    private int profileImage;
 }

@@ -80,22 +80,21 @@ public class Project {
     }
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
     private int id;
 
     @ColumnInfo(name = "title")
     private String title;
 
-    @ColumnInfo(name = "start_date")
+    @ColumnInfo(name = "startdate")
     private String startDate;
 
-    @ColumnInfo(name = "end_date")
+    @ColumnInfo(name = "enddate")
     private String endDate;
 
-    @ColumnInfo(name = "creator_id")
+    @ColumnInfo(name = "creatorid")
     private int creatorID;
 
-    @ColumnInfo(name = "director_id")
+    @ColumnInfo(name = "directorid")
     private int directorID;
 
     @ColumnInfo(name = "status")
@@ -104,6 +103,6 @@ public class Project {
     @ColumnInfo(name = "type")
     private String type;
 
-    @ColumnInfo(name = "document_id")
+    @ColumnInfo(name = "documentid")
     private int documentID;
 }

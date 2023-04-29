@@ -16,24 +16,28 @@ public class RegistrationService {
 
     private static Context context;
 
-    public static void createUser(User user, Bitmap profileImage, Context context){
+    public static long createUser(User user, Bitmap profileImage, Context context){
         RegistrationService.context = context;
-        if(!StringUtils.isEmpty(profileImage)){
-            user.setProfileImage(uploadProfileImage(profileImage));
-        }
 
         SIUAGDatabase database = SIUAGDatabase.getInstance(RegistrationService.context);
         UserDAO userDAO = database.userDAO();
-        userDAO.insertAll(user);
+
+        int userID = (int) userDAO.insertUser(user);
+
+        if(!StringUtils.isEmpty(profileImage)){
+            uploadProfileImage(profileImage, userID);
+        }
+        return userID;
     }
 
-    private static int uploadProfileImage(Bitmap image){
+    private static int uploadProfileImage(Bitmap image, int userID){
         byte[] data = getBitmapAsByteArray(image);
 
         SIUAGDatabase database = SIUAGDatabase.getInstance(RegistrationService.context);
         DocumentDAO documentDAO = database.documentDAO();
         Document document = new Document();
         document.setFile(data);
+        document.setUserID(userID);
         return (int) documentDAO.insertDocument(document);
     }
 

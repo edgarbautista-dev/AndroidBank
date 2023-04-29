@@ -17,13 +17,6 @@ public class Document {
         this.id = id;
     }
 
-    public int getName() {
-        return name;
-    }
-
-    public void setName(int name) {
-        this.name = name;
-    }
 
     public byte[] getFile() {
         return file;
@@ -34,12 +27,19 @@ public class Document {
     }
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
     private int id;
-
-    @ColumnInfo(name = "name")
-    private int name;
 
     @ColumnInfo(name = "file")
     private byte[] file;
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    @ColumnInfo(name = "userid")
+    private int userID;
 }
