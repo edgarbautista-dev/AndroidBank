@@ -1,4 +1,4 @@
-package com.example.androidbank;
+package com.example.miauniverse;
 
 import org.junit.Test;
 

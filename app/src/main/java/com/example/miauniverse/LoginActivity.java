@@ -1,4 +1,4 @@
-package com.example.androidbank;
+package com.example.miauniverse;
 
 import android.content.Intent;
 import android.text.TextUtils;

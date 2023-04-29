@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.androidbank'
+    namespace 'com.example.miauniverse'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.androidbank"
+        applicationId "com.example.miauniverse"
         minSdk 29
         targetSdk 32
         versionCode 1

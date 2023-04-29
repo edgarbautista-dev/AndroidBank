@@ -1,4 +1,4 @@
-package com.example.androidbank;
+package com.example.miauniverse;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -20,6 +20,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.androidbank", appContext.getPackageName());
+        assertEquals("com.example.miauniverse", appContext.getPackageName());
     }
 }

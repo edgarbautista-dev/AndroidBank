@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".LoginActivity">
     <TextView
-            android:text="Bienvenido a Android Bank!"
+            android:text="Bienvenido al MiaUniverse !"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:layout_width="wrap_content"
