@@ -2,8 +2,8 @@
     <string name="app_name">SI UAG</string>
     <string name="bienvenido_al_si_uag">Bienvenido al SI UAG!</string>
     <string name="por_favor_ingrese_sus_credenciales">Por favor ingrese sus credenciales</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
     <string name="login">Login</string>
     <string name="olvidaste_tu_contrase_a">¿olvidaste tu contraseña?</string>
     <string name="si_uag">SI UAG!</string>
