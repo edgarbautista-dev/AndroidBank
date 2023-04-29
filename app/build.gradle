@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.miauniverse'
+    namespace 'com.example.siuag'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.miauniverse"
+        applicationId "com.example.siuag"
         minSdk 29
         targetSdk 32
         versionCode 1

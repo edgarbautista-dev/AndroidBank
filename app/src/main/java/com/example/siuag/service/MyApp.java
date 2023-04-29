@@ -1,4 +1,4 @@
-package com.example.miauniverse.service;
+package com.example.siuag.service;
 
 import android.app.Application;
 import android.os.SystemClock;
