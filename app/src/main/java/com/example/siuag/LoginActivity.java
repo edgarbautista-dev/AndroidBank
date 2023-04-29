@@ -34,11 +34,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí puedes agregar la lógica de autenticación
-                String email = editTextUsername.getText().toString();
+                String username = editTextUsername.getText().toString();
                 String password = editTextPassword.getText().toString();
-                if (isValidEmail(email) && isValidPassword(password)) {
+                if (isValidUser(username) && isValidPassword(password)) {
                     // Autenticación exitosa
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                    intent.putExtra("username", username);
                     startActivity(intent);
                 } else {
                     // Autenticación fallida
@@ -64,8 +65,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isValidEmail(CharSequence target) {
-        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    private boolean isValidUser(String username) {
+        // Aquí puedes agregar tus propios criterios de validación para el usuario
+        return username.length() > 4;
     }
 
     private boolean isValidPassword(String password) {
