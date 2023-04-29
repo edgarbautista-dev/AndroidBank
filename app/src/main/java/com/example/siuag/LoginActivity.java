@@ -14,6 +14,9 @@ public class LoginActivity extends AppCompatActivity {
     private TextView LblMensaje;
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private TextView OlvidoContrasena;
+    private TextView Registrarse;
+
     private Button buttonLogin;
 
     @Override
@@ -24,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
+        OlvidoContrasena = findViewById(R.id.mensajeOlvidoContrasena);
+        Registrarse = findViewById(R.id.registrateAqui);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +44,22 @@ public class LoginActivity extends AppCompatActivity {
                     // Autenticación fallida
                     Toast.makeText(LoginActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                 }
+
+            }
+        });
+        OlvidoContrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPassActivity.class);
+                startActivity(intent);
+            }
+        });
+        Registrarse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, NewUserActivity.class);
+                startActivity(intent);
+
             }
         });
     }

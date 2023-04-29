@@ -7,4 +7,7 @@
     <string name="login">Login</string>
     <string name="olvidaste_tu_contrase_a">¿olvidaste tu contraseña?</string>
     <string name="si_uag">SI UAG!</string>
+    <string name="registrateAqui">Registrate Aquí</string>
+    <string name="usuario_nuevo">¿Usuario Nuevo?</string>
+    <string name="register">Registrar</string>
 </resources>
