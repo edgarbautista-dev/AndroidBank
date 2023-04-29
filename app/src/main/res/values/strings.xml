@@ -10,4 +10,5 @@
     <string name="registrateAqui">Registrate Aquí</string>
     <string name="usuario_nuevo">¿Usuario Nuevo?</string>
     <string name="register">Registrar</string>
+    <string name="enviar_contraseña">Restablecer Contraseña</string>
 </resources>
