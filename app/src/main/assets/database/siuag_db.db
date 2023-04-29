@@ -1,0 +1,45 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "document" (
+	"id"	INTEGER NOT NULL,
+	"name"	TEXT,
+	"file"	BLOB,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	"username"	TEXT,
+	"password"	TEXT,
+	"name"	TEXT NOT NULL,
+	"lastname"	TEXT NOT NULL,
+	"id"	INTEGER NOT NULL,
+	"role"	TEXT,
+	"profile_image"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "project" (
+	"id"	INTEGER NOT NULL,
+	"title"	TEXT NOT NULL,
+	"start_date"	TEXT,
+	"end_date"	TEXT,
+	"creator_id"	INTEGER NOT NULL,
+	"director_id"	INTEGER,
+	"status"	TEXT,
+	"type"	TEXT,
+	"document_id"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("director_id") REFERENCES "user"("id"),
+	FOREIGN KEY("document_id") REFERENCES "document"("id"),
+	FOREIGN KEY("creator_id") REFERENCES "user"("id")
+);
+INSERT INTO "document" VALUES (2,'abilene','abilene.png');
+INSERT INTO "document" VALUES (3,'jose','jose.png');
+INSERT INTO "document" VALUES (4,'edgar','edgar.png');
+INSERT INTO "document" VALUES (5,'lina','lina.png');
+INSERT INTO "document" VALUES (6,'doc1','doc1.pdf');
+INSERT INTO "document" VALUES (7,'doc2','doc2.pdf');
+INSERT INTO "user" VALUES ('abilene','1234','Abilene','Franquez',2,'alumno',2);
+INSERT INTO "user" VALUES ('jose','1234','Jose','Enciso',3,'profesor',3);
+INSERT INTO "user" VALUES ('edgar','1234','Edgar','Bautista',4,'alumno',4);
+INSERT INTO "user" VALUES ('lina','1234','Lina','Aguilar',5,'profesor',5);
+INSERT INTO "project" VALUES (1,'Implementacion de Sistema de Calidad en la UAG','09/09/2021','09/12/2021',2,4,'En progreso','Tesis',6);
+INSERT INTO "project" VALUES (2,'Tecnologias renovables para el giro agropecuario del estado de Jalisco','12/01/2020','03/04/2021',4,3,'Finalizado','Proyecto de Investigacion',7);
+COMMIT;
