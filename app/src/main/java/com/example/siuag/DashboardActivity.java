@@ -21,9 +21,9 @@ public class DashboardActivity extends AppCompatActivity {
     private ListView listView;
 
     Map<String,Class<?>> menuItems = new HashMap<>(){{
+        put("Buscar tesis", TesisActivity.class);
+        put("Ubicar Campus", MapsActivity.class);
         put("Registrar tesis", RegistrarTesisActivity.class);
-        put("Ver tesis", VerTesisActivity.class);
-        put("ayuda", AyudaActivity.class);
     }};
     private ArrayAdapter<String> adapter;
 
@@ -39,8 +39,9 @@ public class DashboardActivity extends AppCompatActivity {
         String username = bundle.getString("username");
         usernameTextView.setText("Bienvenido, "+bundle.getString("username"));
         correoTextView.setText(username.concat("@edu.uag.mx"));
-        //OBTENER LA LISTA DE OPCIONES
+        //OBTENER LA LISTA DE OPCIONES sin sort
         String[] opciones = menuItems.keySet().toArray(new String[0]);
+
 
 
         // Configurar el ListView
